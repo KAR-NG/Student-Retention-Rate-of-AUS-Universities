@@ -1,6 +1,6 @@
 # Student Retention Rate of AUS Universities
 
-# SUMMARY
+**Summary**
 
 This project analyses the statistics of retention, attrition and success rate of Universities in Australia with a focus on the University of Queensland (UQ). Data set used in this project is a publicly available data set downloaded from the website of the Department of Education, Skills and Employment (DESE), Australia Government. The insights of this project are based on statistics in 2019 and 2020. Years will be specified in graphs.
 
