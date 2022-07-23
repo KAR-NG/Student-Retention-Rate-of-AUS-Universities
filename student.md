@@ -1,24 +1,63 @@
-Movement of University Students in Australia
+Student Retention Rate of AUS Universities
 ================
 Kar Ng
 2022-07-23
 
--   [1 R PACKAGES](#1-r-packages)
--   [2 DATA PREPARATION](#2-data-preparation)
-    -   [2.1 Data Import](#21-data-import)
-    -   [2.2 Data Cleaning](#22-data-cleaning)
-    -   [2.3 Data Exploration](#23-data-exploration)
--   [3 VISUALISATION](#3-visualisation)
-    -   [3.1 Qld ranking in Australia](#31-qld-ranking-in-australia)
-    -   [3.2 UQ ranking in Queensland](#32-uq-ranking-in-queensland)
-    -   [3.3 UQ Attrition Ranking (2019)](#33-uq-attrition-ranking-2019)
-    -   [3.4 UQ Retention Ranking (2019)](#34-uq-retention-ranking-2019)
-    -   [3.5 UQ Success Ranking (2020)](#35-uq-success-ranking-2020)
-    -   [3.6 PCA](#36-pca)
--   [4 CONCLUSION](#4-conclusion)
--   [5 REFERENCE](#5-reference)
+-   [1 SUMMARY](#1-summary)
+-   [2 R PACKAGES](#2-r-packages)
+-   [3 DATA PREPARATION](#3-data-preparation)
+    -   [3.1 Data Import](#31-data-import)
+    -   [3.2 Data Cleaning](#32-data-cleaning)
+    -   [3.3 Data Exploration](#33-data-exploration)
+-   [4 VISUALISATION](#4-visualisation)
+    -   [4.1 Qld ranking in Australia](#41-qld-ranking-in-australia)
+    -   [4.2 UQ ranking in Queensland](#42-uq-ranking-in-queensland)
+    -   [4.3 UQ Attrition Ranking (2019)](#43-uq-attrition-ranking-2019)
+    -   [4.4 UQ Retention Ranking (2019)](#44-uq-retention-ranking-2019)
+    -   [4.5 UQ Success Ranking (2020)](#45-uq-success-ranking-2020)
+    -   [4.6 PCA](#46-pca)
+-   [5 CONCLUSION](#5-conclusion)
+-   [6 REFERENCE](#6-reference)
 
-# 1 R PACKAGES
+# 1 SUMMARY
+
+This project analyses the statistics of retention, attrition and success
+rate of Universities in Australia with a focus on the University of
+Queensland (UQ). Data set used in this project is a publicly available
+data set downloaded from the website of the Department of Education,
+Skills and Employment (DESE), Australia Government. The insights of this
+project are based on statistics in 2019 and 2020. Years will be
+specified in graphs.
+
+Imported raw data were very messy. A series of carefully-designed data
+processing techniques were applied to clean and transform the data.
+There are 7 visualisation tasks in this project. Most of the tasks were
+accomplished using customised visualisation techniques and the last task
+was analysed by one of the principal component methods, called principal
+component analysis, it is known as “PCA” to analyse the multivariate
+data set as a whole for trend mining purposes.
+
+Result shows that the performance of attrition, retention and success of
+all states in Australia were not too different from each other, but
+rank-able. Based on the average value, Queensland ranked the third in
+attrition rate, the third last in retention and success rates.
+
+However, the University of Queensland (UQ) was performing well in 2019
+and 2020 in terms of these statistics, both nation-wide or state-wide.
+In state-wide comparison based on average, UQ had the lowest attrition
+rate, highest retention rate, and the second highest in student success
+rate (outcompeted by Bond University in Gold Coast. In nation-wide
+comparison based on average, UQ ranked the 32th in attrition rate (out
+of 41 universities in the data set), ranked the 11th in retention rate,
+and ranked the 20th in success rate. The outputs of PCA show that
+attrition rate is negatively associated to retention rate, success rate
+has no association with attrition rate but little to none association
+with retention rate. Most universities in Australia are doing good as
+they located in the same direction of success and retention rates but
+there are a few underperforming universities are associated with high
+attrition rate.
+
+# 2 R PACKAGES
 
 Following R packages are loaded for this project.
 
@@ -34,12 +73,12 @@ library(factoextra)
 library(cowplot)
 ```
 
-# 2 DATA PREPARATION
+# 3 DATA PREPARATION
 
 This project uses real public data set from the Department of Education,
 Skills and Employment (DESE), Australia Government.
 
-## 2.1 Data Import
+## 3.1 Data Import
 
 This section imports the data set that will be used for this project.
 Note that this data set is a subset of the original dataset. This subset
@@ -100,42 +139,12 @@ New_Normal_Retention_2019
 <tr>
 <td style="text-align:left;">
 
-international
-
-</td>
-<td style="text-align:left;">
-
-Batchelor Institute of Indigenous Tertiary Education(f)
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-
-.
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
 domestic
 
 </td>
 <td style="text-align:left;">
 
-The University of Adelaide
-
-</td>
-<td style="text-align:left;">
-
-9.09
+James Cook University
 
 </td>
 <td style="text-align:left;">
@@ -143,54 +152,9 @@ The University of Adelaide
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 
-domestic
+84.45
 
-</td>
-<td style="text-align:left;">
-
-University of the Sunshine Coast
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-
-79.73
-
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-domestic
-
-</td>
-<td style="text-align:left;">
-
-Deakin University
-
-</td>
-<td style="text-align:left;">
-
-13.39
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
 </td>
 <td style="text-align:left;">
 </td>
@@ -205,7 +169,7 @@ overall
 </td>
 <td style="text-align:left;">
 
-University of Tasmania(e)
+The University of Western Australia
 
 </td>
 <td style="text-align:left;">
@@ -214,7 +178,7 @@ University of Tasmania(e)
 </td>
 <td style="text-align:left;">
 
-83.97
+87.51
 
 </td>
 <td style="text-align:left;">
@@ -238,8 +202,33 @@ The University of Sydney
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
+</td>
+<td style="text-align:left;">
 
-91.49
+95.07
+
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+international
+
+</td>
+<td style="text-align:left;">
+
+Curtin University
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+
+88.47
 
 </td>
 <td style="text-align:left;">
@@ -250,62 +239,12 @@ The University of Sydney
 <tr>
 <td style="text-align:left;">
 
-domestic
+international
 
 </td>
 <td style="text-align:left;">
 
-Victoria University
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-
-88.98
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-overall
-
-</td>
-<td style="text-align:left;">
-
-University of Tasmania(e)
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-
-23.04
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-overall
-
-</td>
-<td style="text-align:left;">
-
-Australian Catholic University
+CQUniversity
 
 </td>
 <td style="text-align:left;">
@@ -314,7 +253,7 @@ Australian Catholic University
 </td>
 <td style="text-align:left;">
 
-90.31
+64.19
 
 </td>
 <td style="text-align:left;">
@@ -330,7 +269,7 @@ overall
 </td>
 <td style="text-align:left;">
 
-La Trobe University
+The University of Western Australia
 
 </td>
 <td style="text-align:left;">
@@ -343,8 +282,58 @@ La Trobe University
 </td>
 <td style="text-align:left;">
 
-78.37
+86.79
 
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+overall
+
+</td>
+<td style="text-align:left;">
+
+University of Southern Queensland
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+
+74.99
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+overall
+
+</td>
+<td style="text-align:left;">
+
+University of Technology Sydney
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+
+91.24
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
 </td>
 </tr>
 <tr>
@@ -359,15 +348,15 @@ Macquarie University
 
 </td>
 <td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
 
-91.14
+8.77
 
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
 </td>
 <td style="text-align:left;">
 </td>
@@ -375,22 +364,22 @@ Macquarie University
 <tr>
 <td style="text-align:left;">
 
-overall
+domestic
 
 </td>
 <td style="text-align:left;">
 
-Edith Cowan University
+The University of Western Australia
 
 </td>
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-
-21.03
-
 </td>
 <td style="text-align:left;">
+
+87.03
+
 </td>
 <td style="text-align:left;">
 </td>
@@ -401,6 +390,31 @@ Edith Cowan University
 <td style="text-align:left;">
 
 international
+
+</td>
+<td style="text-align:left;">
+
+The University of Notre Dame Australia
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+
+84.21
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+overall
 
 </td>
 <td style="text-align:left;">
@@ -412,8 +426,133 @@ Flinders University
 </td>
 <td style="text-align:left;">
 
-13.33
+20.44
 
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+domestic
+
+</td>
+<td style="text-align:left;">
+
+The University of Adelaide
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+
+86.76
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+overall
+
+</td>
+<td style="text-align:left;">
+
+The University of Western Australia
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+
+12.95
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+domestic
+
+</td>
+<td style="text-align:left;">
+
+Charles Sturt University
+
+</td>
+<td style="text-align:left;">
+
+21.01
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+domestic
+
+</td>
+<td style="text-align:left;">
+
+Torrens University Australia(d)
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+
+76.64
+
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+domestic
+
+</td>
+<td style="text-align:left;">
+
+The University of Notre Dame Australia
+
+</td>
+<td style="text-align:left;">
+
+9.56
+
+</td>
+<td style="text-align:left;">
 </td>
 <td style="text-align:left;">
 </td>
@@ -430,32 +569,7 @@ overall
 </td>
 <td style="text-align:left;">
 
-Queensland University of Technology
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-
-82.92
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-domestic
-
-</td>
-<td style="text-align:left;">
-
-Queensland University of Technology
+Charles Sturt University
 
 </td>
 <td style="text-align:left;">
@@ -465,11 +579,11 @@ Queensland University of Technology
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-
-88.62
-
 </td>
 <td style="text-align:left;">
+
+70.55
+
 </td>
 </tr>
 <tr>
@@ -480,82 +594,7 @@ international
 </td>
 <td style="text-align:left;">
 
-The Australian National University
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-
-94.31
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-domestic
-
-</td>
-<td style="text-align:left;">
-
-Batchelor Institute of Indigenous Tertiary Education(f)
-
-</td>
-<td style="text-align:left;">
-
-.
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-domestic
-
-</td>
-<td style="text-align:left;">
-
-University of South Australia
-
-</td>
-<td style="text-align:left;">
-
-17.76
-
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-overall
-
-</td>
-<td style="text-align:left;">
-
-Australian Maritime College(e)
+National Total
 
 </td>
 <td style="text-align:left;">
@@ -564,7 +603,7 @@ Australian Maritime College(e)
 </td>
 <td style="text-align:left;">
 
-.
+88.37
 
 </td>
 <td style="text-align:left;">
@@ -580,7 +619,14 @@ international
 </td>
 <td style="text-align:left;">
 
-James Cook University
+Swinburne University of Technology
+
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+
+15.43
 
 </td>
 <td style="text-align:left;">
@@ -588,13 +634,6 @@ James Cook University
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-
-86.91
-
 </td>
 </tr>
 </tbody>
@@ -612,7 +651,7 @@ dim(data)
 
     ## [1] 396   7
 
-## 2.2 Data Cleaning
+## 3.2 Data Cleaning
 
 There will be a lot of data cleaning tasks but the process is completed
 in following code chunk. In following code chunk,
@@ -759,118 +798,7 @@ values_per
 <tr>
 <td style="text-align:left;">
 
-2019
-
-</td>
-<td style="text-align:left;">
-
-Queensland
-
-</td>
-<td style="text-align:left;">
-
-Griffith University
-
-</td>
-<td style="text-align:left;">
-
-domestic
-
-</td>
-<td style="text-align:left;">
-
-Attrition
-
-</td>
-<td style="text-align:left;">
-
-New_Adjusted
-
-</td>
-<td style="text-align:right;">
-
-15.84
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2019
-
-</td>
-<td style="text-align:left;">
-
-Western Australia
-
-</td>
-<td style="text-align:left;">
-
-Curtin University
-
-</td>
-<td style="text-align:left;">
-
-domestic
-
-</td>
-<td style="text-align:left;">
-
-Attrition
-
-</td>
-<td style="text-align:left;">
-
-New_Adjusted
-
-</td>
-<td style="text-align:right;">
-
-14.40
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
 2020
-
-</td>
-<td style="text-align:left;">
-
-Queensland
-
-</td>
-<td style="text-align:left;">
-
-Bond University
-
-</td>
-<td style="text-align:left;">
-
-overall
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:right;">
-
-92.97
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2019
 
 </td>
 <td style="text-align:left;">
@@ -880,7 +808,7 @@ Victoria
 </td>
 <td style="text-align:left;">
 
-Swinburne University of Technology
+La Trobe University
 
 </td>
 <td style="text-align:left;">
@@ -890,17 +818,17 @@ domestic
 </td>
 <td style="text-align:left;">
 
-Retention
+Success
 
 </td>
 <td style="text-align:left;">
 
-New_Adjusted
+Success
 
 </td>
 <td style="text-align:right;">
 
-80.81
+86.45
 
 </td>
 </tr>
@@ -917,155 +845,7 @@ Queensland
 </td>
 <td style="text-align:left;">
 
-Queensland University of Technology
-
-</td>
-<td style="text-align:left;">
-
-domestic
-
-</td>
-<td style="text-align:left;">
-
-Retention
-
-</td>
-<td style="text-align:left;">
-
-New_Adjusted
-
-</td>
-<td style="text-align:right;">
-
-88.62
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2020
-
-</td>
-<td style="text-align:left;">
-
-Queensland
-
-</td>
-<td style="text-align:left;">
-
-Griffith University
-
-</td>
-<td style="text-align:left;">
-
-international
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:right;">
-
-88.78
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2020
-
-</td>
-<td style="text-align:left;">
-
-Western Australia
-
-</td>
-<td style="text-align:left;">
-
-The University of Notre Dame Australia
-
-</td>
-<td style="text-align:left;">
-
-overall
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:right;">
-
-90.93
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2019
-
-</td>
-<td style="text-align:left;">
-
-Victoria
-
-</td>
-<td style="text-align:left;">
-
-Deakin University
-
-</td>
-<td style="text-align:left;">
-
-international
-
-</td>
-<td style="text-align:left;">
-
-Attrition
-
-</td>
-<td style="text-align:left;">
-
-New_Normal
-
-</td>
-<td style="text-align:right;">
-
-14.20
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2019
-
-</td>
-<td style="text-align:left;">
-
-Australia
-
-</td>
-<td style="text-align:left;">
-
-National Total
+University of the Sunshine Coast
 
 </td>
 <td style="text-align:left;">
@@ -1085,44 +865,7 @@ New_Normal
 </td>
 <td style="text-align:right;">
 
-86.91
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2019
-
-</td>
-<td style="text-align:left;">
-
-Queensland
-
-</td>
-<td style="text-align:left;">
-
-Queensland University of Technology
-
-</td>
-<td style="text-align:left;">
-
-international
-
-</td>
-<td style="text-align:left;">
-
-Attrition
-
-</td>
-<td style="text-align:left;">
-
-New_Normal
-
-</td>
-<td style="text-align:right;">
-
-9.70
+65.06
 
 </td>
 </tr>
@@ -1176,7 +919,44 @@ Queensland
 </td>
 <td style="text-align:left;">
 
-Bond University
+CQUniversity
+
+</td>
+<td style="text-align:left;">
+
+overall
+
+</td>
+<td style="text-align:left;">
+
+Retention
+
+</td>
+<td style="text-align:left;">
+
+New_Normal
+
+</td>
+<td style="text-align:right;">
+
+69.81
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2019
+
+</td>
+<td style="text-align:left;">
+
+New South Wales
+
+</td>
+<td style="text-align:left;">
+
+Western Sydney University
 
 </td>
 <td style="text-align:left;">
@@ -1196,155 +976,7 @@ New_Adjusted
 </td>
 <td style="text-align:right;">
 
-95.56
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2020
-
-</td>
-<td style="text-align:left;">
-
-Victoria
-
-</td>
-<td style="text-align:left;">
-
-Swinburne University of Technology
-
-</td>
-<td style="text-align:left;">
-
-domestic
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:right;">
-
-82.27
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2020
-
-</td>
-<td style="text-align:left;">
-
-New South Wales
-
-</td>
-<td style="text-align:left;">
-
-University of Technology Sydney
-
-</td>
-<td style="text-align:left;">
-
-domestic
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:right;">
-
-90.99
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2020
-
-</td>
-<td style="text-align:left;">
-
-Victoria
-
-</td>
-<td style="text-align:left;">
-
-Swinburne University of Technology
-
-</td>
-<td style="text-align:left;">
-
-international
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:right;">
-
-89.81
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2019
-
-</td>
-<td style="text-align:left;">
-
-Queensland
-
-</td>
-<td style="text-align:left;">
-
-The University of Queensland
-
-</td>
-<td style="text-align:left;">
-
-international
-
-</td>
-<td style="text-align:left;">
-
-Retention
-
-</td>
-<td style="text-align:left;">
-
-New_Normal
-
-</td>
-<td style="text-align:right;">
-
-94.09
+86.52
 
 </td>
 </tr>
@@ -1361,12 +993,12 @@ New South Wales
 </td>
 <td style="text-align:left;">
 
-The University of Newcastle
+The University of New England
 
 </td>
 <td style="text-align:left;">
 
-international
+overall
 
 </td>
 <td style="text-align:left;">
@@ -1381,7 +1013,7 @@ New_Normal
 </td>
 <td style="text-align:right;">
 
-90.92
+67.44
 
 </td>
 </tr>
@@ -1393,17 +1025,17 @@ New_Normal
 </td>
 <td style="text-align:left;">
 
-Multi-State
+Victoria
 
 </td>
 <td style="text-align:left;">
 
-Australian Catholic University
+Federation University Australia(c)
 
 </td>
 <td style="text-align:left;">
 
-domestic
+overall
 
 </td>
 <td style="text-align:left;">
@@ -1413,12 +1045,49 @@ Attrition
 </td>
 <td style="text-align:left;">
 
-New_Adjusted
+New_Normal
 
 </td>
 <td style="text-align:right;">
 
-12.33
+35.21
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2020
+
+</td>
+<td style="text-align:left;">
+
+Queensland
+
+</td>
+<td style="text-align:left;">
+
+Queensland University of Technology
+
+</td>
+<td style="text-align:left;">
+
+overall
+
+</td>
+<td style="text-align:left;">
+
+Success
+
+</td>
+<td style="text-align:left;">
+
+Success
+
+</td>
+<td style="text-align:right;">
+
+82.92
 
 </td>
 </tr>
@@ -1440,6 +1109,43 @@ Macquarie University
 </td>
 <td style="text-align:left;">
 
+overall
+
+</td>
+<td style="text-align:left;">
+
+Success
+
+</td>
+<td style="text-align:left;">
+
+Success
+
+</td>
+<td style="text-align:right;">
+
+84.66
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2020
+
+</td>
+<td style="text-align:left;">
+
+Victoria
+
+</td>
+<td style="text-align:left;">
+
+Monash University
+
+</td>
+<td style="text-align:left;">
+
 international
 
 </td>
@@ -1455,7 +1161,7 @@ Success
 </td>
 <td style="text-align:right;">
 
-86.60
+91.38
 
 </td>
 </tr>
@@ -1467,12 +1173,12 @@ Success
 </td>
 <td style="text-align:left;">
 
-New South Wales
+Victoria
 
 </td>
 <td style="text-align:left;">
 
-University of New South Wales(b)
+Federation University Australia(c)
 
 </td>
 <td style="text-align:left;">
@@ -1492,7 +1198,7 @@ New_Normal
 </td>
 <td style="text-align:right;">
 
-91.92
+57.55
 
 </td>
 </tr>
@@ -1504,12 +1210,12 @@ New_Normal
 </td>
 <td style="text-align:left;">
 
-South Australia
+Tasmania
 
 </td>
 <td style="text-align:left;">
 
-Flinders University
+University of Tasmania(e)
 
 </td>
 <td style="text-align:left;">
@@ -1529,7 +1235,7 @@ Success
 </td>
 <td style="text-align:right;">
 
-85.27
+83.97
 
 </td>
 </tr>
@@ -1541,49 +1247,12 @@ Success
 </td>
 <td style="text-align:left;">
 
-Victoria
+New South Wales
 
 </td>
 <td style="text-align:left;">
 
-University of Divinity
-
-</td>
-<td style="text-align:left;">
-
-international
-
-</td>
-<td style="text-align:left;">
-
-Attrition
-
-</td>
-<td style="text-align:left;">
-
-New_Normal
-
-</td>
-<td style="text-align:right;">
-
-4.35
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2019
-
-</td>
-<td style="text-align:left;">
-
-Queensland
-
-</td>
-<td style="text-align:left;">
-
-Griffith University
+Western Sydney University
 
 </td>
 <td style="text-align:left;">
@@ -1603,44 +1272,7 @@ New_Normal
 </td>
 <td style="text-align:right;">
 
-87.34
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2020
-
-</td>
-<td style="text-align:left;">
-
-New South Wales
-
-</td>
-<td style="text-align:left;">
-
-University of New South Wales(b)
-
-</td>
-<td style="text-align:left;">
-
-overall
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:left;">
-
-Success
-
-</td>
-<td style="text-align:right;">
-
-93.67
+85.16
 
 </td>
 </tr>
@@ -1657,12 +1289,12 @@ Victoria
 </td>
 <td style="text-align:left;">
 
-Victoria University
+The University of Melbourne
 
 </td>
 <td style="text-align:left;">
 
-domestic
+international
 
 </td>
 <td style="text-align:left;">
@@ -1672,12 +1304,123 @@ Attrition
 </td>
 <td style="text-align:left;">
 
-New_Adjusted
+New_Normal
 
 </td>
 <td style="text-align:right;">
 
-14.68
+6.15
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2019
+
+</td>
+<td style="text-align:left;">
+
+Victoria
+
+</td>
+<td style="text-align:left;">
+
+Monash University
+
+</td>
+<td style="text-align:left;">
+
+overall
+
+</td>
+<td style="text-align:left;">
+
+Retention
+
+</td>
+<td style="text-align:left;">
+
+New_Normal
+
+</td>
+<td style="text-align:right;">
+
+90.74
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2020
+
+</td>
+<td style="text-align:left;">
+
+New South Wales
+
+</td>
+<td style="text-align:left;">
+
+University of Wollongong
+
+</td>
+<td style="text-align:left;">
+
+international
+
+</td>
+<td style="text-align:left;">
+
+Success
+
+</td>
+<td style="text-align:left;">
+
+Success
+
+</td>
+<td style="text-align:right;">
+
+88.32
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2019
+
+</td>
+<td style="text-align:left;">
+
+Western Australia
+
+</td>
+<td style="text-align:left;">
+
+Murdoch University
+
+</td>
+<td style="text-align:left;">
+
+international
+
+</td>
+<td style="text-align:left;">
+
+Attrition
+
+</td>
+<td style="text-align:left;">
+
+New_Normal
+
+</td>
+<td style="text-align:right;">
+
+13.50
 
 </td>
 </tr>
@@ -1699,6 +1442,117 @@ The University of Notre Dame Australia
 </td>
 <td style="text-align:left;">
 
+domestic
+
+</td>
+<td style="text-align:left;">
+
+Retention
+
+</td>
+<td style="text-align:left;">
+
+New_Adjusted
+
+</td>
+<td style="text-align:right;">
+
+90.35
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2019
+
+</td>
+<td style="text-align:left;">
+
+Victoria
+
+</td>
+<td style="text-align:left;">
+
+Victoria University
+
+</td>
+<td style="text-align:left;">
+
+overall
+
+</td>
+<td style="text-align:left;">
+
+Attrition
+
+</td>
+<td style="text-align:left;">
+
+New_Normal
+
+</td>
+<td style="text-align:right;">
+
+19.36
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2020
+
+</td>
+<td style="text-align:left;">
+
+Queensland
+
+</td>
+<td style="text-align:left;">
+
+University of Southern Queensland
+
+</td>
+<td style="text-align:left;">
+
+overall
+
+</td>
+<td style="text-align:left;">
+
+Success
+
+</td>
+<td style="text-align:left;">
+
+Success
+
+</td>
+<td style="text-align:right;">
+
+74.99
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2019
+
+</td>
+<td style="text-align:left;">
+
+New South Wales
+
+</td>
+<td style="text-align:left;">
+
+University of Technology Sydney
+
+</td>
+<td style="text-align:left;">
+
 overall
 
 </td>
@@ -1714,7 +1568,266 @@ New_Normal
 </td>
 <td style="text-align:right;">
 
-83.29
+88.00
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2020
+
+</td>
+<td style="text-align:left;">
+
+Queensland
+
+</td>
+<td style="text-align:left;">
+
+Bond University
+
+</td>
+<td style="text-align:left;">
+
+domestic
+
+</td>
+<td style="text-align:left;">
+
+Success
+
+</td>
+<td style="text-align:left;">
+
+Success
+
+</td>
+<td style="text-align:right;">
+
+94.28
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2019
+
+</td>
+<td style="text-align:left;">
+
+New South Wales
+
+</td>
+<td style="text-align:left;">
+
+University of Technology Sydney
+
+</td>
+<td style="text-align:left;">
+
+international
+
+</td>
+<td style="text-align:left;">
+
+Attrition
+
+</td>
+<td style="text-align:left;">
+
+New_Normal
+
+</td>
+<td style="text-align:right;">
+
+11.52
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2019
+
+</td>
+<td style="text-align:left;">
+
+Queensland
+
+</td>
+<td style="text-align:left;">
+
+University of Southern Queensland
+
+</td>
+<td style="text-align:left;">
+
+international
+
+</td>
+<td style="text-align:left;">
+
+Attrition
+
+</td>
+<td style="text-align:left;">
+
+New_Normal
+
+</td>
+<td style="text-align:right;">
+
+11.79
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2019
+
+</td>
+<td style="text-align:left;">
+
+Australia
+
+</td>
+<td style="text-align:left;">
+
+National Total
+
+</td>
+<td style="text-align:left;">
+
+international
+
+</td>
+<td style="text-align:left;">
+
+Attrition
+
+</td>
+<td style="text-align:left;">
+
+New_Normal
+
+</td>
+<td style="text-align:right;">
+
+12.73
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2019
+
+</td>
+<td style="text-align:left;">
+
+Australian Capital Territory
+
+</td>
+<td style="text-align:left;">
+
+University of Canberra
+
+</td>
+<td style="text-align:left;">
+
+international
+
+</td>
+<td style="text-align:left;">
+
+Retention
+
+</td>
+<td style="text-align:left;">
+
+New_Normal
+
+</td>
+<td style="text-align:right;">
+
+89.45
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2019
+
+</td>
+<td style="text-align:left;">
+
+Western Australia
+
+</td>
+<td style="text-align:left;">
+
+Curtin University
+
+</td>
+<td style="text-align:left;">
+
+domestic
+
+</td>
+<td style="text-align:left;">
+
+Retention
+
+</td>
+<td style="text-align:left;">
+
+New_Adjusted
+
+</td>
+<td style="text-align:right;">
+
+85.41
+
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+
+2019
+
+</td>
+<td style="text-align:left;">
+
+South Australia
+
+</td>
+<td style="text-align:left;">
+
+Torrens University Australia(d)
+
+</td>
+<td style="text-align:left;">
+
+domestic
+
+</td>
+<td style="text-align:left;">
+
+Attrition
+
+</td>
+<td style="text-align:left;">
+
+New_Adjusted
+
+</td>
+<td style="text-align:right;">
+
+22.87
 
 </td>
 </tr>
@@ -1758,17 +1871,17 @@ New_Adjusted
 <tr>
 <td style="text-align:left;">
 
-2019
+2020
 
 </td>
 <td style="text-align:left;">
 
-South Australia
+Australian Capital Territory
 
 </td>
 <td style="text-align:left;">
 
-University of South Australia
+University of Canberra
 
 </td>
 <td style="text-align:left;">
@@ -1778,80 +1891,6 @@ domestic
 </td>
 <td style="text-align:left;">
 
-Attrition
-
-</td>
-<td style="text-align:left;">
-
-New_Adjusted
-
-</td>
-<td style="text-align:right;">
-
-17.76
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2019
-
-</td>
-<td style="text-align:left;">
-
-New South Wales
-
-</td>
-<td style="text-align:left;">
-
-University of Wollongong
-
-</td>
-<td style="text-align:left;">
-
-international
-
-</td>
-<td style="text-align:left;">
-
-Attrition
-
-</td>
-<td style="text-align:left;">
-
-New_Normal
-
-</td>
-<td style="text-align:right;">
-
-12.93
-
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-
-2020
-
-</td>
-<td style="text-align:left;">
-
-Queensland
-
-</td>
-<td style="text-align:left;">
-
-CQUniversity
-
-</td>
-<td style="text-align:left;">
-
-overall
-
-</td>
-<td style="text-align:left;">
-
 Success
 
 </td>
@@ -1862,14 +1901,14 @@ Success
 </td>
 <td style="text-align:right;">
 
-79.70
+84.22
 
 </td>
 </tr>
 </tbody>
 </table>
 
-## 2.3 Data Exploration
+## 3.3 Data Exploration
 
 Summary data:
 
@@ -2974,7 +3013,7 @@ colSums(is.na(mydata))
     ##       year      state        Uni    student    metrics     method values_per 
     ##          0          0          0          0          0          0          0
 
-# 3 VISUALISATION
+# 4 VISUALISATION
 
 ``` r
 names(mydata)
@@ -2983,7 +3022,7 @@ names(mydata)
     ## [1] "year"       "state"      "Uni"        "student"    "metrics"   
     ## [6] "method"     "values_per"
 
-## 3.1 Qld ranking in Australia
+## 4.1 Qld ranking in Australia
 
 UQ ranked the third in attrition rate, the 9th in term of retention, and
 also the 9th in term of success rate.
@@ -3011,7 +3050,7 @@ ggplot(df1, aes(y = label, x = values_per, color = qld)) +
 
 ![](student_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
-## 3.2 UQ ranking in Queensland
+## 4.2 UQ ranking in Queensland
 
 ``` r
 df2 <- mydata %>% 
@@ -3038,7 +3077,7 @@ ggplot(df2, aes(y = label, x = values_per, color = uq)) +
 
 ![](student_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
-## 3.3 UQ Attrition Ranking (2019)
+## 4.3 UQ Attrition Ranking (2019)
 
 This section summarise attrition rate of year 2019. It is important to
 note that “**new adjusted**” attrition rate is applied to domestic
@@ -3097,7 +3136,7 @@ ggplot(df3, aes(x = values_per, y = fct_reorder(x2, values_per))) +
 
 ![](student_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
-## 3.4 UQ Retention Ranking (2019)
+## 4.4 UQ Retention Ranking (2019)
 
 This section summarise retention rate of year 2019. Similar to attrition
 rate, it is also important to note that “**new adjusted**” retention
@@ -3159,7 +3198,7 @@ ggplot(df4, aes(x = values_per, y = fct_reorder(x2, values_per))) +
 
 ![](student_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
-## 3.5 UQ Success Ranking (2020)
+## 4.5 UQ Success Ranking (2020)
 
 ``` r
 # data frame
@@ -3218,7 +3257,7 @@ ggplot(df5, aes(x = values_per, y = fct_reorder(x2, values_per))) +
 
 ![](student_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
-## 3.6 PCA
+## 4.6 PCA
 
 ``` r
 # set up df
@@ -3264,13 +3303,13 @@ plot_grid(top, g5, ncol = 1)
 
 ![](student_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
-# 4 CONCLUSION
+# 5 CONCLUSION
 
 UQ is generally performing very well and certainly our goal is to make
 UQ the number 1 in relevant to attrition rate, success rate and
 retention rate in Australia.
 
-# 5 REFERENCE
+# 6 REFERENCE
 
 DESE n.d., “Selected Higher Education Statistics – 2020 Student data”,
 viewed 19 July 2022,
