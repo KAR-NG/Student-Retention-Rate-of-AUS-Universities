@@ -1,0 +1,397 @@
+student,Uni,New_Adjusted_Attrition_2019,New_Normal_Attrition_2019,Success_2020,New_Adjusted_Retention_2019,New_Normal_Retention_2019
+domestic,National Total,13.23,,,,
+domestic,Charles Sturt University,21.01,,,,
+domestic,Macquarie University,8.77,,,,
+domestic,Southern Cross University,21.85,,,,
+domestic,The University of New England,24.9,,,,
+domestic,The University of Newcastle,12.92,,,,
+domestic,The University of Sydney,4.87,,,,
+domestic,University of New South Wales(b),3.86,,,,
+domestic,University of Technology Sydney,4.99,,,,
+domestic,University of Wollongong,11.33,,,,
+domestic,Western Sydney University,13.41,,,,
+domestic,Deakin University,13.39,,,,
+domestic,Federation University Australia(c),23.33,,,,
+domestic,La Trobe University,14.83,,,,
+domestic,Monash University,4.55,,,,
+domestic,RMIT University,11.22,,,,
+domestic,Swinburne University of Technology,19.08,,,,
+domestic,The University of Melbourne,3.43,,,,
+domestic,University of Divinity,6.06,,,,
+domestic,Victoria University,14.68,,,,
+domestic,Bond University,4.34,,,,
+domestic,CQUniversity,22.25,,,,
+domestic,Griffith University,15.84,,,,
+domestic,James Cook University,17,,,,
+domestic,Queensland University of Technology,11.35,,,,
+domestic,The University of Queensland,7.53,,,,
+domestic,University of Southern Queensland,22.4,,,,
+domestic,University of the Sunshine Coast,20.21,,,,
+domestic,Curtin University,14.4,,,,
+domestic,Edith Cowan University,17.81,,,,
+domestic,Murdoch University,15.99,,,,
+domestic,The University of Notre Dame Australia,9.56,,,,
+domestic,The University of Western Australia,7.83,,,,
+domestic,Flinders University,15.13,,,,
+domestic,The University of Adelaide,9.09,,,,
+domestic,Torrens University Australia(d),22.87,,,,
+domestic,University of South Australia,17.76,,,,
+domestic,Australian Maritime College(e),.,,,,
+domestic,University of Tasmania(e),21.51,,,,
+domestic,Batchelor Institute of Indigenous Tertiary Education(f),.,,,,
+domestic,Charles Darwin University(f),21.09,,,,
+domestic,The Australian National University,5.47,,,,
+domestic,University of Canberra,12.98,,,,
+domestic,Australian Catholic University,12.33,,,,
+international,National Total,,12.73,,,
+international,Charles Sturt University,,26.71,,,
+international,Macquarie University,,9.68,,,
+international,Southern Cross University,,41.32,,,
+international,The University of New England,,22.13,,,
+international,The University of Newcastle,,8.99,,,
+international,The University of Sydney,,9.17,,,
+international,University of New South Wales(b),,7.94,,,
+international,University of Technology Sydney,,11.52,,,
+international,University of Wollongong,,12.93,,,
+international,Western Sydney University,,14.76,,,
+international,Deakin University,,14.2,,,
+international,Federation University Australia(c),,42.1,,,
+international,La Trobe University,,17.59,,,
+international,Monash University,,8.13,,,
+international,RMIT University,,6.89,,,
+international,Swinburne University of Technology,,15.43,,,
+international,The University of Melbourne,,6.15,,,
+international,University of Divinity,,4.35,,,
+international,Victoria University,,13.02,,,
+international,Bond University,,13.83,,,
+international,CQUniversity,,46.49,,,
+international,Griffith University,,12.18,,,
+international,James Cook University,,12.69,,,
+international,Queensland University of Technology,,9.7,,,
+international,The University of Queensland,,5.79,,,
+international,University of Southern Queensland,,11.79,,,
+international,University of the Sunshine Coast,,34.72,,,
+international,Curtin University,,8.35,,,
+international,Edith Cowan University,,15.54,,,
+international,Murdoch University,,13.5,,,
+international,The University of Notre Dame Australia,,15.79,,,
+international,The University of Western Australia,,7.13,,,
+international,Flinders University,,13.33,,,
+international,The University of Adelaide,,10.3,,,
+international,Torrens University Australia(d),,36.81,,,
+international,University of South Australia,,14.78,,,
+international,Australian Maritime College(e),,.,,,
+international,University of Tasmania(e),,10.1,,,
+international,Batchelor Institute of Indigenous Tertiary Education(f),,.,,,
+international,Charles Darwin University(f),,7.72,,,
+international,The Australian National University,,5.47,,,
+international,University of Canberra,,10.24,,,
+international,Australian Catholic University,,11.41,,,
+overall,National Total,,18.14,,,
+overall,Charles Sturt University,,27.38,,,
+overall,Macquarie University,,15.24,,,
+overall,Southern Cross University,,31.77,,,
+overall,The University of New England,,31.79,,,
+overall,The University of Newcastle,,16.24,,,
+overall,The University of Sydney,,10.38,,,
+overall,University of New South Wales(b),,9.44,,,
+overall,University of Technology Sydney,,11.81,,,
+overall,University of Wollongong,,16.19,,,
+overall,Western Sydney University,,19.63,,,
+overall,Deakin University,,19.25,,,
+overall,Federation University Australia(c),,35.21,,,
+overall,La Trobe University,,21.49,,,
+overall,Monash University,,9.07,,,
+overall,RMIT University,,12.64,,,
+overall,Swinburne University of Technology,,22.72,,,
+overall,The University of Melbourne,,7.47,,,
+overall,University of Divinity,,8.99,,,
+overall,Victoria University,,19.36,,,
+overall,Bond University,,10.08,,,
+overall,CQUniversity,,29.87,,,
+overall,Griffith University,,21.61,,,
+overall,James Cook University,,19.2,,,
+overall,Queensland University of Technology,,16.95,,,
+overall,The University of Queensland,,13.23,,,
+overall,University of Southern Queensland,,27.34,,,
+overall,University of the Sunshine Coast,,27.93,,,
+overall,Curtin University,,17.86,,,
+overall,Edith Cowan University,,21.03,,,
+overall,Murdoch University,,19.29,,,
+overall,The University of Notre Dame Australia,,16.47,,,
+overall,The University of Western Australia,,12.95,,,
+overall,Flinders University,,20.44,,,
+overall,The University of Adelaide,,14.13,,,
+overall,Torrens University Australia(d),,51.8,,,
+overall,University of South Australia,,21.8,,,
+overall,Australian Maritime College(e),,.,,,
+overall,University of Tasmania(e),,23.04,,,
+overall,Batchelor Institute of Indigenous Tertiary Education(f),,.,,,
+overall,Charles Darwin University(f),,25.42,,,
+overall,The Australian National University,,9.42,,,
+overall,University of Canberra,,17.8,,,
+overall,Australian Catholic University,,19.94,,,
+domestic,National Total,,,85.85,,
+domestic,Charles Sturt University,,,82.67,,
+domestic,Macquarie University,,,84.39,,
+domestic,Southern Cross University,,,78.13,,
+domestic,The University of New England,,,73.86,,
+domestic,The University of Newcastle,,,85.11,,
+domestic,The University of Sydney,,,91.49,,
+domestic,University of New South Wales(b),,,94.43,,
+domestic,University of Technology Sydney,,,90.99,,
+domestic,University of Wollongong,,,88.35,,
+domestic,Western Sydney University,,,81.01,,
+domestic,Deakin University,,,87.45,,
+domestic,Federation University Australia(c),,,90.7,,
+domestic,La Trobe University,,,86.45,,
+domestic,Monash University,,,92.65,,
+domestic,RMIT University,,,88.95,,
+domestic,Swinburne University of Technology,,,82.27,,
+domestic,The University of Melbourne,,,93.87,,
+domestic,University of Divinity,,,88.83,,
+domestic,Victoria University,,,88.98,,
+domestic,Bond University,,,94.28,,
+domestic,CQUniversity,,,80.72,,
+domestic,Griffith University,,,80.23,,
+domestic,James Cook University,,,84.45,,
+domestic,Queensland University of Technology,,,82.25,,
+domestic,The University of Queensland,,,85.39,,
+domestic,University of Southern Queensland,,,73.67,,
+domestic,University of the Sunshine Coast,,,80.42,,
+domestic,Curtin University,,,82.73,,
+domestic,Edith Cowan University,,,85.85,,
+domestic,Murdoch University,,,76.79,,
+domestic,The University of Notre Dame Australia,,,90.89,,
+domestic,The University of Western Australia,,,87.03,,
+domestic,Flinders University,,,83.85,,
+domestic,The University of Adelaide,,,86.76,,
+domestic,Torrens University Australia(d),,,81.17,,
+domestic,University of South Australia,,,83.61,,
+domestic,Australian Maritime College(e),,,.,,
+domestic,University of Tasmania(e),,,84.95,,
+domestic,Batchelor Institute of Indigenous Tertiary Education(f),,,.,,
+domestic,Charles Darwin University(f),,,81.45,,
+domestic,The Australian National University,,,93.49,,
+domestic,University of Canberra,,,84.22,,
+domestic,Australian Catholic University,,,89.67,,
+international,National Total,,,88.37,,
+international,Charles Sturt University,,,90.73,,
+international,Macquarie University,,,86.6,,
+international,Southern Cross University,,,79.97,,
+international,The University of New England,,,76.6,,
+international,The University of Newcastle,,,89,,
+international,The University of Sydney,,,85.52,,
+international,University of New South Wales(b),,,90.37,,
+international,University of Technology Sydney,,,92.29,,
+international,University of Wollongong,,,88.32,,
+international,Western Sydney University,,,83.72,,
+international,Deakin University,,,82.96,,
+international,Federation University Australia(c),,,92.67,,
+international,La Trobe University,,,87.97,,
+international,Monash University,,,91.38,,
+international,RMIT University,,,92.73,,
+international,Swinburne University of Technology,,,89.81,,
+international,The University of Melbourne,,,90.17,,
+international,University of Divinity,,,97.64,,
+international,Victoria University,,,93.56,,
+international,Bond University,,,87.31,,
+international,CQUniversity,,,64.19,,
+international,Griffith University,,,88.78,,
+international,James Cook University,,,85.51,,
+international,Queensland University of Technology,,,87.9,,
+international,The University of Queensland,,,89.06,,
+international,University of Southern Queensland,,,87.97,,
+international,University of the Sunshine Coast,,,90.34,,
+international,Curtin University,,,88.47,,
+international,Edith Cowan University,,,85.57,,
+international,Murdoch University,,,88.05,,
+international,The University of Notre Dame Australia,,,93.84,,
+international,The University of Western Australia,,,89.86,,
+international,Flinders University,,,93.29,,
+international,The University of Adelaide,,,88.13,,
+international,Torrens University Australia(d),,,75.24,,
+international,University of South Australia,,,77.88,,
+international,Australian Maritime College(e),,,.,,
+international,University of Tasmania(e),,,78.68,,
+international,Batchelor Institute of Indigenous Tertiary Education(f),,,.,,
+international,Charles Darwin University(f),,,92.55,,
+international,The Australian National University,,,93.51,,
+international,University of Canberra,,,85.19,,
+international,Australian Catholic University,,,94.41,,
+overall,National Total,,,86.39,,
+overall,Charles Sturt University,,,84.28,,
+overall,Macquarie University,,,84.66,,
+overall,Southern Cross University,,,78.53,,
+overall,The University of New England,,,73.94,,
+overall,The University of Newcastle,,,85.64,,
+overall,The University of Sydney,,,89.55,,
+overall,University of New South Wales(b),,,93.67,,
+overall,University of Technology Sydney,,,91.24,,
+overall,University of Wollongong,,,88.34,,
+overall,Western Sydney University,,,81.34,,
+overall,Deakin University,,,86.66,,
+overall,Federation University Australia(c),,,91.33,,
+overall,La Trobe University,,,86.7,,
+overall,Monash University,,,92.12,,
+overall,RMIT University,,,90.48,,
+overall,Swinburne University of Technology,,,83.84,,
+overall,The University of Melbourne,,,92.72,,
+overall,University of Divinity,,,92.38,,
+overall,Victoria University,,,90.14,,
+overall,Bond University,,,92.97,,
+overall,CQUniversity,,,79.7,,
+overall,Griffith University,,,81.54,,
+overall,James Cook University,,,84.87,,
+overall,Queensland University of Technology,,,82.92,,
+overall,The University of Queensland,,,86.26,,
+overall,University of Southern Queensland,,,74.99,,
+overall,University of the Sunshine Coast,,,81.3,,
+overall,Curtin University,,,84.06,,
+overall,Edith Cowan University,,,85.81,,
+overall,Murdoch University,,,80.34,,
+overall,The University of Notre Dame Australia,,,90.93,,
+overall,The University of Western Australia,,,87.51,,
+overall,Flinders University,,,85.27,,
+overall,The University of Adelaide,,,87.06,,
+overall,Torrens University Australia(d),,,78.15,,
+overall,University of South Australia,,,82.71,,
+overall,Australian Maritime College(e),,,.,,
+overall,University of Tasmania(e),,,83.97,,
+overall,Batchelor Institute of Indigenous Tertiary Education(f),,,.,,
+overall,Charles Darwin University(f),,,82.99,,
+overall,The Australian National University,,,93.49,,
+overall,University of Canberra,,,84.37,,
+overall,Australian Catholic University,,,90.31,,
+domestic,National Total,,,,86.55,
+domestic,Charles Sturt University,,,,78.79,
+domestic,Macquarie University,,,,91.14,
+domestic,Southern Cross University,,,,77.75,
+domestic,The University of New England,,,,74.84,
+domestic,The University of Newcastle,,,,87.04,
+domestic,The University of Sydney,,,,95.07,
+domestic,University of New South Wales(b),,,,95.99,
+domestic,University of Technology Sydney,,,,94.91,
+domestic,University of Wollongong,,,,88.44,
+domestic,Western Sydney University,,,,86.52,
+domestic,Deakin University,,,,86.47,
+domestic,Federation University Australia(c),,,,76.41,
+domestic,La Trobe University,,,,85.1,
+domestic,Monash University,,,,95.38,
+domestic,RMIT University,,,,88.54,
+domestic,Swinburne University of Technology,,,,80.81,
+domestic,The University of Melbourne,,,,96.39,
+domestic,University of Divinity,,,,93.65,
+domestic,Victoria University,,,,85.18,
+domestic,Bond University,,,,95.56,
+domestic,CQUniversity,,,,77.64,
+domestic,Griffith University,,,,84.01,
+domestic,James Cook University,,,,82.83,
+domestic,Queensland University of Technology,,,,88.62,
+domestic,The University of Queensland,,,,92.42,
+domestic,University of Southern Queensland,,,,77.23,
+domestic,University of the Sunshine Coast,,,,79.73,
+domestic,Curtin University,,,,85.41,
+domestic,Edith Cowan University,,,,81.9,
+domestic,Murdoch University,,,,83.89,
+domestic,The University of Notre Dame Australia,,,,90.35,
+domestic,The University of Western Australia,,,,92.03,
+domestic,Flinders University,,,,84.77,
+domestic,The University of Adelaide,,,,90.7,
+domestic,Torrens University Australia(d),,,,76.64,
+domestic,University of South Australia,,,,82.19,
+domestic,Australian Maritime College(e),,,,.,
+domestic,University of Tasmania(e),,,,76.15,
+domestic,Batchelor Institute of Indigenous Tertiary Education(f),,,,.,
+domestic,Charles Darwin University(f),,,,78.7,
+domestic,The Australian National University,,,,94.39,
+domestic,University of Canberra,,,,86.47,
+domestic,Australian Catholic University,,,,87.6,
+international,National Total,,,,,86.91
+international,Charles Sturt University,,,,,60.67
+international,Macquarie University,,,,,90.01
+international,Southern Cross University,,,,,57.08
+international,The University of New England,,,,,73.23
+international,The University of Newcastle,,,,,90.92
+international,The University of Sydney,,,,,90.78
+international,University of New South Wales(b),,,,,91.92
+international,University of Technology Sydney,,,,,88.4
+international,University of Wollongong,,,,,86.91
+international,Western Sydney University,,,,,85.16
+international,Deakin University,,,,,85.22
+international,Federation University Australia(c),,,,,57.55
+international,La Trobe University,,,,,82.31
+international,Monash University,,,,,91.67
+international,RMIT University,,,,,93
+international,Swinburne University of Technology,,,,,84.02
+international,The University of Melbourne,,,,,93.72
+international,University of Divinity,,,,,95.45
+international,Victoria University,,,,,86.91
+international,Bond University,,,,,86.02
+international,CQUniversity,,,,,50.84
+international,Griffith University,,,,,87.34
+international,James Cook University,,,,,86.91
+international,Queensland University of Technology,,,,,90.03
+international,The University of Queensland,,,,,94.09
+international,University of Southern Queensland,,,,,88.01
+international,University of the Sunshine Coast,,,,,65.06
+international,Curtin University,,,,,91.51
+international,Edith Cowan University,,,,,82.55
+international,Murdoch University,,,,,86.44
+international,The University of Notre Dame Australia,,,,,84.21
+international,The University of Western Australia,,,,,92.77
+international,Flinders University,,,,,84.97
+international,The University of Adelaide,,,,,89.59
+international,Torrens University Australia(d),,,,,62.97
+international,University of South Australia,,,,,85.16
+international,Australian Maritime College(e),,,,,.
+international,University of Tasmania(e),,,,,89.61
+international,Batchelor Institute of Indigenous Tertiary Education(f),,,,,.
+international,Charles Darwin University(f),,,,,92.23
+international,The Australian National University,,,,,94.31
+international,University of Canberra,,,,,89.45
+international,Australian Catholic University,,,,,88.34
+overall,National Total,,,,,81.49
+overall,Charles Sturt University,,,,,70.55
+overall,Macquarie University,,,,,84.51
+overall,Southern Cross University,,,,,67.28
+overall,The University of New England,,,,,67.44
+overall,The University of Newcastle,,,,,83.69
+overall,The University of Sydney,,,,,89.51
+overall,University of New South Wales(b),,,,,90.2
+overall,University of Technology Sydney,,,,,88
+overall,University of Wollongong,,,,,83.48
+overall,Western Sydney University,,,,,80.24
+overall,Deakin University,,,,,80.41
+overall,Federation University Australia(c),,,,,64.37
+overall,La Trobe University,,,,,78.37
+overall,Monash University,,,,,90.74
+overall,RMIT University,,,,,87.11
+overall,Swinburne University of Technology,,,,,77
+overall,The University of Melbourne,,,,,92.18
+overall,University of Divinity,,,,,90.59
+overall,Victoria University,,,,,80.42
+overall,Bond University,,,,,89.71
+overall,CQUniversity,,,,,69.81
+overall,Griffith University,,,,,78.05
+overall,James Cook University,,,,,80.44
+overall,Queensland University of Technology,,,,,82.96
+overall,The University of Queensland,,,,,86.63
+overall,University of Southern Queensland,,,,,72.15
+overall,University of the Sunshine Coast,,,,,71.91
+overall,Curtin University,,,,,81.89
+overall,Edith Cowan University,,,,,78.15
+overall,Murdoch University,,,,,80.56
+overall,The University of Notre Dame Australia,,,,,83.29
+overall,The University of Western Australia,,,,,86.79
+overall,Flinders University,,,,,79.13
+overall,The University of Adelaide,,,,,85.53
+overall,Torrens University Australia(d),,,,,47.07
+overall,University of South Australia,,,,,78.13
+overall,Australian Maritime College(e),,,,,.
+overall,University of Tasmania(e),,,,,74.58
+overall,Batchelor Institute of Indigenous Tertiary Education(f),,,,,.
+overall,Charles Darwin University(f),,,,,74.32
+overall,The Australian National University,,,,,90.24
+overall,University of Canberra,,,,,81.42
+overall,Australian Catholic University,,,,,79.87
